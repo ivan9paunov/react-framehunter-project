@@ -13,23 +13,9 @@ header .logo-img {
     z-index: 999;
 }
 
-header nav {
-    /* width: 100%; */
-    /* background: rgb(212, 212, 212); */
-    /* background: rgb(175, 174, 174); */
-    /* background-color: black; */
-}
-
-header nav .navigation {
-    width: 100%;
-    height: 80px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-}
-
 header nav .nav-btns {
-    width: 40%;
+    display: flex;
+    gap: 12px;
 }
 
 .nav-btns>a {
@@ -37,66 +23,22 @@ header nav .nav-btns {
     background: #3c7496;
     padding: 2px 14px 4px 14px;
     border-radius: 8px;
-    box-shadow: 0px 0px 15px 0px rgb(123, 123, 123);
-
+    box-shadow: 0px 0px 15px 0px rgb(135, 135, 135);
     z-index: 999;
 }
+
 .nav-btns>a:hover {
     background: #8a5044;
 }
 
-/* header nav .logo-img {
-    width: 20%;
-} */
-
-header nav .nav-btns {
-    display: flex;
-    gap: 12px;
-}
-
-header .nav-btns.group1 {
-    justify-content: flex-end;
-}
-
-header nav .logo-img {
-    /* position: relative; */
-    display: flex;
-    justify-content: center;
-}
-
-header nav img {
-    /* width: 75%; */
-    max-width: 250px;
-    /* position: absolute; */
-    /* left: 50%; */
-    /* transform: translate(-50%, -15%); */
-    z-index: 999;
-}
-
-header .navigation .nav-btns a {
-    width: 115px;
-    color: white;
-    background-color: #5084b2;
-    font-size: 14px;
-    font-weight: 600;
-    text-align: center;
-    padding: 6px 12px;
-    border-radius: 15px;
-    z-index: 1000;
-}
-
-header nav .navigation .nav-btns a:hover {
-    background-color: #d2b977;
-    color: black;
-}
-
 main {
     flex: 1;
+    background: rgb(175, 174, 174);
 }
 
 footer {
     width: 100%;
-    height: 220px;
+    height: 50px;
     background-color: white;
     display: flex;
     align-items: center;
@@ -106,7 +48,7 @@ footer {
 footer .footer-app {
     width: 100%;
     height: 100%;
-    border-top: 3px solid #d2b977;
+    border-top: 3px solid #8a5044;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -118,7 +60,7 @@ footer .footer-app a {
 }
 
 footer .footer-app span.highlighted {
-    color: #d2b977;
+    color: #8a5044;
 }
 
 footer .footer-app span.less-opacity {
@@ -127,48 +69,24 @@ footer .footer-app span.less-opacity {
 
 footer .footer-author {
     height: 100%;
-    width: 600px;
+    width: 300px;
     padding: 0 10px;
-    background-color: #d2b977;
+    background-color: #8a5044;
     text-align: center;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-footer .footer-author img {
-    width: 250px;
-    margin-bottom: 15px;
+footer .footer-author a {
+    font-weight: 900;
 }
 
-footer .footer-author p {
-    font-size: 22px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-footer .footer-author p:nth-of-type(2) {
-    align-items: baseline;
-}
-
-footer .footer-author i {
-    font-size: 20px;
-}
-
-/* .welcoming-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 700px;
-} */
 
 .heroSection {
     color: white;
     position: absolute;
-    height: 700px;
+    height: 100vh;
     width: 100%;
     top: 0;
     left: 0;
@@ -176,11 +94,7 @@ footer .footer-author i {
         url('../../images/cover.jpg') no-repeat center center;
     background-size: cover;
     background-blend-mode: darken;
-    z-index: 100;
-}
-
-.heroSection>span {
-    width: 100%;
+    z-index: 1;
 }
 
 .welcome-text {
@@ -194,7 +108,6 @@ footer .footer-author i {
     flex-direction: column;
     align-items: center;
     gap: 35px;
-    /* text-shadow: 0px 2px 5px black; */
 }
 
 .welcome-text h1 {
@@ -206,34 +119,71 @@ footer .footer-author i {
 .welcome-text h3 {
     text-transform: uppercase;
     text-align: center;
-    /* text-shadow: -1px -1px 9px black; */
 }
 
-section.last-three-games {
+section.quick-instructions {
+    position: relative;
     width: 100%;
-    margin: 700px auto 0 auto;
-    padding: 0px 0 100px 0;
-    background: rgb(175, 174, 174);
+    margin-top: 100vh;
+    padding-bottom: 20px;
 }
 
-section.last-three-games .latest-container {
+section.last-three-spots {
+    position: relative;
+    width: 100%;
+    margin-top: 100px;
+    padding: 0px 0 120px 0;
+}
+
+section.quick-instructions .section-container,
+section.last-three-spots .section-container {
     display: flex;
     flex-direction: column;
     gap: 50px;
 }
 
-section.last-three-games .latest-container h2 {
+section.quick-instructions .section-container h2,
+section.last-three-spots .section-container h2 {
     text-align: center;
     text-transform: uppercase;
     font-size: 40px;
+    text-shadow: 0px 0px 8px rgba(100, 100, 100, 0.2);
+
 }
 
-.latest-games {
+.steps-wrapper,
+.latest-spots {
     display: flex;
     justify-content: space-evenly;
 }
 
-.latest-game {
+.steps-wrapper {
+    width: 80%;
+    margin: 0 auto;
+    gap: 30px;
+}
+
+.step {
+    width: 25%;
+    text-align: center;
+}
+
+.step > i {
+    color: #3c7496;
+    font-size: 44px;
+    margin-bottom: 20px;
+}
+.step > h3 {
+    font-size: 22px;
+    text-shadow: 0px 0px 8px rgba(100, 100, 100, 0.2);
+}
+.step > p {
+    font-size: 17px;
+    text-shadow: 0px 0px 8px rgba(100, 100, 100, 0.2);
+
+}
+
+.latest-spot {
     width: 265px;
     background-color: white;
     color: #363535;
@@ -244,18 +194,18 @@ section.last-three-games .latest-container h2 {
     align-items: center;
 }
 
-.latest-game:hover {
+.latest-spot:hover {
     transform: scale(1.03);
 }
 
-.latest-game img {
+.latest-spot img {
     height: 300px;
     width: 245px;
     margin-bottom: 12px;
     border-radius: 12px 12px 12px 24px;
 }
 
-.latest-game-info {
+.latest-spot-info {
     height: 100%;
     width: 100%;
     display: flex;
@@ -265,31 +215,31 @@ section.last-three-games .latest-container h2 {
     gap: 15px;
 }
 
-.latest-game h3 {
+.latest-spot h3 {
     font-size: 18px;
     color: rgb(0, 7, 53);
     text-align: center;
     line-height: 1.2em;
 }
 
-.latest-game p {
+.latest-spot p {
     font-weight: 900;
 }
 
-.latest-game a {
+.latest-spot a {
     color: white;
     font-size: 14px;
     font-weight: 600;
-    padding: 6px 18px;
+    padding: 4px 16px 6px 16px;
     border-radius: 8px;
     background-color: #3c7496;
 }
 
-.latest-game a:hover {
+.latest-spot a:hover {
     background-color: #8a5044;
 }
 
-.latest-game-footer {
+.latest-spot-footer {
     display: flex;
     width: 100%;
     align-items: center;
@@ -361,7 +311,7 @@ section.last-three-games .latest-container h2 {
 }
 
 @media (max-width: 830px) {
-    .latest-games {
+    .latest-spots {
         display: flex;
         flex-direction: column;
         align-items: center;
