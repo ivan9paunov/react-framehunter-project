@@ -1,13 +1,14 @@
 header {
     position: relative;
     width: calc(100% / 3 * 2);
-    margin: 20px auto 0 auto;
+    margin: 20px auto 18px auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 header .logo-img {
+    display: block;
     position: relative;
     width: 75px;
     z-index: 999;
@@ -29,11 +30,6 @@ header nav .nav-btns {
 
 .nav-btns>a:hover {
     background: #8a5044;
-}
-
-main {
-    flex: 1;
-    background: rgb(175, 174, 174);
 }
 
 footer {
@@ -174,11 +170,15 @@ section.last-three-spots .section-container h2 {
     margin-bottom: 20px;
 }
 .step > h3 {
+    color: #3c7496;
     font-size: 22px;
     text-shadow: 0px 0px 8px rgba(100, 100, 100, 0.2);
+    margin-bottom: 10px;
 }
 .step > p {
-    font-size: 17px;
+    color: #8a5044;
+    font-size: 16px;
+    font-weight: 500;
     text-shadow: 0px 0px 8px rgba(100, 100, 100, 0.2);
 
 }

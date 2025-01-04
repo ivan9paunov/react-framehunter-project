@@ -14,7 +14,12 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background: linear-gradient(180deg, rgb(182, 182, 182) 0%, rgb(171, 171, 171) 100%);
+    background: linear-gradient(90deg, rgba(223,218,198,1) 0%, rgb(192, 207, 221) 100%);
+
     color: white;
     font-family: 'Oswald', sans-serif;
+}
+
+main {
+    flex: 1;
 }
