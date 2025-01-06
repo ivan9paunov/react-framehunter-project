@@ -199,7 +199,7 @@ footer .footer-author a {
 .likes,
 .bookmarks {
     position: absolute;
-    font-size: 30px;
+    font-size: 25px;
     color: #3c7496;
 }
 .bookmarks {
@@ -219,4 +219,114 @@ footer .footer-author a {
     bottom: 10px;
     right: 20px;
     text-align: end;
+}
+
+.comment-section {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.comment-section h2 {
+    color: #3c7496;
+    font-size: 26px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.comments {
+    width: 80%;
+    margin: 30px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.comment {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: black;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(54, 53, 53, 1) 100%);
+    border-radius: 5px;
+}
+
+.comment-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    border-bottom: 2px solid #8a5044;
+}
+
+.comment-header > :nth-child(1),
+.comment-header > :nth-child(3) {
+    width: 100px;
+}
+
+.delete-comment {
+    text-align: end;
+}
+.fa-rectangle-xmark {
+    font-size: 20px;
+    cursor: pointer;
+}
+.fa-rectangle-xmark:hover {
+    color: #3c7496;
+}
+
+.comment-body {
+    padding: 30px;
+    text-align: center;
+}
+
+.comment-input {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 80%;
+    background: black;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(54, 53, 53, 1) 100%);
+    border-radius: 5px;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.comment-input h3 {
+    font-size: 26px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.comment-input form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.comment-input textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.comment-input button {
+    width: 100%;
+    background: #8a5044;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    padding: 10px 0 13px 0;
+    cursor: pointer;
+    font-family: 'Oswald';
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.comment-input button:hover {
+    background: #3c7496;
 }
