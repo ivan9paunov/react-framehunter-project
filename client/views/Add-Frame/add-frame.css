@@ -79,28 +79,16 @@ footer .footer-author a {
     font-weight: 900;
 }
 
-
-.image-section {
-    color: white;
-    position: absolute;
-    height: 100vh;
-    width: 100%;
-    top: 0;
-    left: 0;
+body {
     background: linear-gradient(to bottom, rgba(210, 198, 164, 0.5), rgba(102, 102, 102, 0.4), rgb(99, 99, 99, 0.6)),
         url('../../images/sub-cover.jpg') no-repeat center center;
     background-size: cover;
     background-blend-mode: darken;
-    z-index: 1;
 }
 
 .add-form-section {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     width: 50%;
-    margin: 0 auto;
+    margin: 30px auto 75px auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -140,7 +128,8 @@ footer .footer-author a {
 }
 
 .add-form-container input,
-.add-form-container select {
+.add-form-container select,
+.add-form-container textarea {
     width: 100%;
     padding: 14px 12px;
     font-size: 16px;
@@ -148,6 +137,10 @@ footer .footer-author a {
 
 .add-form-container select {
     padding: 14px 10px;
+}
+
+.add-form-container textarea {
+    padding: 10px;
 }
 
 .add-form-container button {
