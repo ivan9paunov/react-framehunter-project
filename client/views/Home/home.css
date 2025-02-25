@@ -32,6 +32,13 @@ header nav .nav-btns {
     background: #8a5044;
 }
 
+.mobileTogglerCheckbox,
+.mobileToggler {
+    display: none;
+    z-index: 999;
+}
+
+
 footer {
     width: 100%;
     height: 50px;
@@ -248,53 +255,47 @@ section.last-three-spots .section-container h2 {
 }
 
 /* NAVBAR RESPONSIVE */
-@media (max-width: 1000px) {
-    header .navigation .nav-btns a {
-        font-size: 14px;
-    }
-
-    header .navigation .nav-btns a {
-        width: 112px;
-    }
-}
-
 @media (max-width: 900px) {
-    header .navigation .nav-btns a {
-        font-size: 14px;
-    }
-
-    header .navigation .nav-btns a {
-        width: 80px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        line-height: 1em;
+    header {
+        width: 90%;
     }
 }
 
-@media (max-width: 680px) {
-    header nav .navigation {
-        height: 100%;
-        padding: 10px 0;
+@media (max-width: 610px) {
+    .mobileToggler {
+        display: block;
+        cursor: pointer;
+        color: #3c7496;
+        font-size: 24px;
     }
 
-    header .navigation .nav-btns {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+    header {
+        position: relative;
+        width: 75%;
     }
 
-    header .navigation .nav-btns a {
-        width: 120px;
-    }
-
-    header nav img {
-        width: 100%;
+    header > nav {
+        display: none;
         position: absolute;
-        left: 50%;
-        transform: translate(-50%, -40%);
-        z-index: 999;
+        top: 27px;
+        left: 26px;
+        width: 40%;
+    }
+
+    .nav-btns {
+        flex-direction: column;
+        gap: 2px !important;
+    }
+
+    .mobileTogglerCheckbox:checked ~ nav {
+        display: block;
+    }
+}
+
+/* FOOTER */
+@media (max-width: 500px) {
+    footer {
+        font-size: 14px;
     }
 }
 
@@ -317,6 +318,16 @@ section.last-three-spots .section-container h2 {
         flex-direction: column;
         align-items: center;
         gap: 20px;
+    }
+}
+
+@media (max-width: 610px) {
+    .steps-wrapper {
+        flex-direction: column;
+    }
+
+    .step {
+        width: 100%;
     }
 }
 
