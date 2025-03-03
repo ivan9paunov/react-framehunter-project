@@ -96,7 +96,6 @@ footer .footer-author a {
 .filters label {
     color: #8a5044;
     font-weight: 700;
-    /* text-transform: uppercase; */
 }
 
 .filters select {
@@ -110,7 +109,6 @@ footer .footer-author a {
     margin: 30px 50px;
     padding: 20px;
     border-radius: 10px;
-    /* overflow: hidden; */
 }
 
 .cards-container {
