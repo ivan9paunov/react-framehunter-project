@@ -1,0 +1,76 @@
+header {
+    position: relative;
+    width: calc(100% / 3 * 2);
+    margin: 20px auto 18px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo-img {
+    display: block;
+    position: relative;
+    width: 75px;
+    z-index: 999;
+}
+
+header nav .nav-btns {
+    display: flex;
+    gap: 12px;
+}
+
+.nav-btns>a {
+    color: white;
+    background: #3c7496;
+    padding: 2px 14px 4px 14px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px 0px rgb(135, 135, 135);
+    z-index: 999;
+}
+
+.nav-btns>a:hover {
+    background: #8a5044;
+}
+
+.mobileTogglerCheckbox,
+.mobileToggler {
+    display: none;
+    z-index: 999;
+}
+
+@media (max-width: 900px) {
+    header {
+        width: 90%;
+    }
+}
+
+@media (max-width: 610px) {
+    .mobileToggler {
+        display: block;
+        cursor: pointer;
+        color: #3c7496;
+        font-size: 24px;
+    }
+
+    header {
+        position: relative;
+        width: 75%;
+    }
+
+    header > nav {
+        display: none;
+        position: absolute;
+        top: 27px;
+        left: 26px;
+        width: 40%;
+    }
+
+    .nav-btns {
+        flex-direction: column;
+        gap: 2px !important;
+    }
+
+    .mobileTogglerCheckbox:checked ~ nav {
+        display: block;
+    }
+}
