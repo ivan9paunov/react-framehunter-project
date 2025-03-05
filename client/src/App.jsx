@@ -1,9 +1,10 @@
 import Footer from './components/footer/Footer.jsx';
 import Header from './components/header/Header.jsx';
 // import Home from './components/home/Home.jsx';
-import Login from './components/login/Login.jsx';
+// import Login from './components/login/Login.jsx';
+import Register from './components/register/Register.jsx';
 
-import './styles.css';
+import '../public/styles/styles.css';
 
 function App() {
     return (
@@ -11,7 +12,8 @@ function App() {
             <Header />
             <div className='content-wrap'>
                 {/* <Home /> */}
-                <Login />
+                {/* <Login /> */}
+                <Register />
             </div>
             <Footer />
         </div>
