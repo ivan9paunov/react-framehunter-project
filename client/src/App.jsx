@@ -2,7 +2,8 @@ import Footer from './components/footer/Footer.jsx';
 import Header from './components/header/Header.jsx';
 // import Home from './components/home/Home.jsx';
 // import Login from './components/login/Login.jsx';
-import Register from './components/register/Register.jsx';
+// import Register from './components/register/Register.jsx';
+import FrameAdd from './components/frame-add/FrameAdd.jsx';
 
 import '../public/styles/styles.css';
 
@@ -13,7 +14,8 @@ function App() {
             <div className='content-wrap'>
                 {/* <Home /> */}
                 {/* <Login /> */}
-                <Register />
+                {/* <Register /> */}
+                <FrameAdd />
             </div>
             <Footer />
         </div>
