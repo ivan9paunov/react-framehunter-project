@@ -67,7 +67,7 @@ export default function FrameEdit() {
                             <option value="Congo, Democratic Republic of">Congo, Democratic Republic of</option>
                             <option value="Cook Islands">Cook Islands</option>
                             <option value="Costa Rica">Costa Rica</option>
-                            <option value="Cote d'Ivoire">Cote d&amp;Ivoire</option>
+                            <option value="Cote d'Ivoire">Cote d&apos;Ivoire</option>
                             <option value="Croatia">Croatia</option>
                             <option value="Cuba">Cuba</option>
                             <option value="Curacao">Curacao</option>
@@ -217,8 +217,7 @@ export default function FrameEdit() {
                             <option value="Solomon Islands">Solomon Islands</option>
                             <option value="Somalia">Somalia</option>
                             <option value="South Africa">South Africa</option>
-                            <option value="South Georgia and The South Sandwich Islands">South Georgia and The South
-                                Sandwich Islands</option>
+                            <option value="South Georgia & Sandwich Is.">South Georgia &amp; Sandwich Is.</option>
                             <option value="South Korea">South Korea</option>
                             <option value="South Sudan">South Sudan</option>
                             <option value="Spain">Spain</option>
@@ -248,8 +247,7 @@ export default function FrameEdit() {
                             <option value="United Arab Emirates">United Arab Emirates</option>
                             <option value="United Kingdom">United Kingdom</option>
                             <option value="United States">United States</option>
-                            <option value="United States Minor Outlying Islands">United States Minor Outlying Islands
-                            </option>
+                            <option value="US Minor Outlying Islands">US Minor Outlying Islands</option>
                             <option value="Uruguay">Uruguay</option>
                             <option value="Uzbekistan">Uzbekistan</option>
                             <option value="Vanuatu">Vanuatu</option>
