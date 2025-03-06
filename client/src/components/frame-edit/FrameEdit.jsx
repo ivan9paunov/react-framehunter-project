@@ -1,11 +1,11 @@
-import styles from './FrameAdd.module.css';
+import styles from './FrameEdit.module.css';
 
-export default function FrameAdd() {
+export default function FrameEdit() {
     return (
         <main>
-            <div className={styles['add-form-section']}>
-                <div className={styles['add-form-container']}>
-                    <h3>New Frame</h3>
+            <div className={styles['edit-form-section']}>
+                <div className={styles['edit-form-container']}>
+                    <h3>Edit Frame</h3>
                     <h5>Please provide detailed information</h5>
                     <form>
                         <input type="text" name="destination" id="destination" placeholder="Destination Name" />
@@ -67,7 +67,7 @@ export default function FrameAdd() {
                             <option value="Congo, Democratic Republic of">Congo, Democratic Republic of</option>
                             <option value="Cook Islands">Cook Islands</option>
                             <option value="Costa Rica">Costa Rica</option>
-                            <option value="Cote d'Ivoire">Cote d&apos;Ivoire</option>
+                            <option value="Cote d'Ivoire">Cote d&amp;Ivoire</option>
                             <option value="Croatia">Croatia</option>
                             <option value="Cuba">Cuba</option>
                             <option value="Curacao">Curacao</option>
@@ -296,8 +296,9 @@ export default function FrameAdd() {
                             </div>
                         </div>
                         <textarea name="description" id="description" placeholder="Description" rows="4"></textarea>
-                        <div>
-                            <button>Add Frame</button>
+                        <div className={styles['btns']}>
+                            <button>Back</button>
+                            <button>Edit</button>
                         </div>
                     </form>
                 </div>

@@ -1,4 +1,4 @@
-.add-form-section {
+.edit-form-section {
     width: 100%;
     margin: 30px auto 75px auto;
     display: flex;
@@ -6,7 +6,7 @@
     align-items: center;
 }
 
-.add-form-container {
+.edit-form-container {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -18,13 +18,13 @@
     padding: 30px 40px;
 }
 
-.add-form-container h3 {
+.edit-form-container h3 {
     font-size: 26px;
     text-align: center;
     text-transform: uppercase;
 }
 
-.add-form-container h5 {
+.edit-form-container h5 {
     color: #8a5044;
     font-size: 22px;
     font-weight: 700;
@@ -32,26 +32,26 @@
     text-transform: uppercase;
 }
 
-.add-form-container form {
+.edit-form-container form {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-.add-form-container input,
-.add-form-container select,
-.add-form-container textarea {
+.edit-form-container input,
+.edit-form-container select,
+.edit-form-container textarea {
     width: 100%;
     padding: 14px 12px;
     font-size: 16px;
 }
 
-.add-form-container select {
+.edit-form-container select {
     padding: 14px 10px;
 }
 
-.add-form-container textarea {
+.edit-form-container textarea {
     padding: 10px;
 }
 
@@ -94,7 +94,12 @@
     color: #8a5044;
 }
 
-.add-form-container button {
+.btns {
+    display: flex;
+    gap: 30px;
+}
+
+.edit-form-container button {
     width: 100%;
     background: #8a5044;
     color: white;
@@ -107,12 +112,20 @@
     font-weight: 600;
 }
 
-.add-form-container button:hover {
+.btns button:nth-of-type(1) {
+    background: #BDBDBF;
+    color: #8a5044;
+}
+.btns button:nth-of-type(1):hover {
+    color: white;
+}
+
+.edit-form-container button:hover {
     background: #3c7496;
 }
 
 @media (max-width: 560px) {
-    .add-form-container {
+    .edit-form-container {
         width: 90%;
         padding: 30px 25px;
     }
