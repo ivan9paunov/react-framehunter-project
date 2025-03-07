@@ -7,7 +7,8 @@ import Header from './components/header/Header.jsx';
 // import FrameEdit from './components/frame-edit/FrameEdit.jsx';
 // import FrameCatalog from './components/frame-catalog/FrameCatalog.jsx';
 // import FrameDetails from './components/frame-details/FrameDetails.jsx';
-import PageNotFound from './components/page-not-found/PageNotFound.jsx';
+// import PageNotFound from './components/page-not-found/PageNotFound.jsx';
+import ServerError from './components/server-error/ServerError.jsx';
 
 import '../public/styles/styles.css';
 
@@ -23,7 +24,8 @@ function App() {
                 {/* <FrameEdit /> */}
                 {/* <FrameCatalog /> */}
                 {/* <FrameDetails /> */}
-                <PageNotFound />
+                {/* <PageNotFound /> */}
+                <ServerError />
             </div>
             <Footer />
         </div>
