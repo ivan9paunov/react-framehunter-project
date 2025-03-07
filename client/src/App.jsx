@@ -6,7 +6,8 @@ import Header from './components/header/Header.jsx';
 // import FrameAdd from './components/frame-add/FrameAdd.jsx';
 // import FrameEdit from './components/frame-edit/FrameEdit.jsx';
 // import FrameCatalog from './components/frame-catalog/FrameCatalog.jsx';
-import FrameDetails from './components/frame-details/FrameDetails.jsx';
+// import FrameDetails from './components/frame-details/FrameDetails.jsx';
+import PageNotFound from './components/page-not-found/PageNotFound.jsx';
 
 import '../public/styles/styles.css';
 
@@ -21,7 +22,8 @@ function App() {
                 {/* <FrameAdd /> */}
                 {/* <FrameEdit /> */}
                 {/* <FrameCatalog /> */}
-                <FrameDetails />
+                {/* <FrameDetails /> */}
+                <PageNotFound />
             </div>
             <Footer />
         </div>
