@@ -13,8 +13,8 @@ export default function Header() {
             <nav>
                 <div className={styles['nav-btns']}>
                     <a href="/">Home</a>
-                    <a href="/catalog">Destinations</a>
-                    <a href="/add-frame">Add Frame</a>
+                    <a href="/frames">Destinations</a>
+                    <a href="/frames/create">Add Frame</a>
                     <a href="/profile">My Profile</a>
                     <a href="/logout">Logout</a>
                     {/* <a href="/login">Login</a> */}
