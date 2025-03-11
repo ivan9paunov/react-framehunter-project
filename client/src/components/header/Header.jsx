@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import styles from './Header.module.css';
 
 export default function Header() {
@@ -8,17 +10,17 @@ export default function Header() {
                 <i className="fa-solid fa-bars"></i>
             </label>
             <div className={styles.logo}>
-                <a href="/home"><img src="/img/logo.png" alt="logo" className={styles['logo-img']} /></a>
+                <Link to="/"><img src="/img/logo.png" alt="logo" className={styles['logo-img']} /></Link>
             </div>
             <nav>
                 <div className={styles['nav-btns']}>
-                    <a href="/">Home</a>
-                    <a href="/frames">Destinations</a>
-                    <a href="/frames/create">Add Frame</a>
-                    <a href="/profile">My Profile</a>
-                    <a href="/logout">Logout</a>
-                    {/* <a href="/login">Login</a> */}
-                    {/* <a href="/register">Register</a> */}
+                    <Link to="/">Home</Link>
+                    <Link to="/destinations">Destinations</Link>
+                    <Link to="/destinations/add">Add Frame</Link>
+                    <Link to="/profile">My Profile</Link>
+                    <Link to="/logout">Logout</Link>
+                    {/* <Link to="/login">Login</Link> */}
+                    {/* <Link to="/register">Register</Link> */}
                 </div>
             </nav>
         </header>

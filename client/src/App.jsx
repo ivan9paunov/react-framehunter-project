@@ -23,9 +23,9 @@ function App() {
                     <Route path='/' element={<Home />} />
                     <Route path='/login' element={<Login />} />
                     <Route path='/register' element={<Register />} />
-                    <Route path='/frames' element={<FrameCatalog />} />
-                    <Route path='/details/:id' element={<FrameDetails />} />
-                    <Route path='/frames/create' element={<FrameAdd />} />
+                    <Route path='/destinations' element={<FrameCatalog />} />
+                    <Route path='/destinations/add' element={<FrameAdd />} />
+                    <Route path='destinations/:id/details' element={<FrameDetails />} />
                 
                 {/* <FrameEdit /> */}
                 {/* <PageNotFound /> */}
