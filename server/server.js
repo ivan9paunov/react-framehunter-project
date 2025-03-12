@@ -1355,7 +1355,7 @@
         }
     };
     var seedData = {
-        reports: {
+        frames: {
             '600a2267-438e-410f-87b5-d6e3c58ba814': {
                 _ownerId: '935f0fb7-a6fc-4084-99b0-b084a1ec87f1',
                 destination: 'Duomo di Milano',
