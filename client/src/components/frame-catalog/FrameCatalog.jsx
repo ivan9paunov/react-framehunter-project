@@ -1,6 +1,16 @@
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+
 import styles from './FrameCatalog.module.css';
+import * as framesAPI from '../../api/frames-api.js';
 
 export default function FrameCatalog() {
+    const [frames, setFrames] = useState([]);
+
+    useEffect(() => {
+        framesAPI.getAll().then(result => setFrames(result));
+    }, []);
+
     return (
         <main>
             <div className={styles.filters}>
@@ -268,78 +278,24 @@ export default function FrameCatalog() {
             </div>
             <div className={styles['main-container']}>
                 <div className={styles['cards-container']}>
-                    <div className={styles.card}>
-                        <div className={styles['card-img']}>
-                            <img src="https://images.unsplash.com/photo-1600663757626-0fc610ba60d4?q=80&w=1884&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                alt="Golden Gate Bridge Picture" />
-                        </div>
-                        <div className={styles['card-details']}>
-                            <div className={styles['card-destination-header']}>
-                                <h5>San Francisco, USA</h5>
-                                <h2>Golden Gate Bridge</h2>
+
+                    {frames.map(frame => (
+                        <div key={frame._id} className={styles.card}>
+                            <div className={styles['card-img']}>
+                                <Link to={`/destinations/${frame._id}/details`}>
+                                    <img src={frame.imageUrl} alt={`${frame.destination}'s picture`} />
+                                </Link>
                             </div>
-                            <p>Capture the Golden Gate Bridge at its finest by shooting during sunset. Position the bridge
-                                between the trees to frame it beautifully and enhance the composition. Experiment with
-                                different angles and perspectives to add a unique touch. Don&apos;t forget to use a tripod for
-                                stability and play with the exposure settings to capture the perfect lighting. Happy
-                                shooting!</p>
-                            <a href="">See more</a>
-                        </div>
-                    </div>
-                    <div className={styles.card}>
-                        <div className={styles['card-img']}>
-                            <img src="https://images.unsplash.com/photo-1522092372459-dff01028d904?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                alt="Golden Gate Bridge Picture" />
-                        </div>
-                        <div className={styles['card-details']}>
-                            <div className={styles['card-destination-header']}>
-                                <h5>New York, USA</h5>
-                                <h2>Brooklyn Bridge</h2>
+                            <div className={styles['card-details']}>
+                                <div className={styles['card-destination-header']}>
+                                    <h5>{frame.region ? `${frame.region}, ${frame.country}` : frame.country}</h5>
+                                    <h2>{frame.destination}</h2>
+                                </div>
+                                <p>{frame.description}</p>
+                                <Link to={`/destinations/${frame._id}/details`}>See more</Link>
                             </div>
-                            <p>Capture the Brooklyn Bridge at its finest by shooting during sunset. Position the bridge
-                                between the trees to frame it beautifully and enhance the composition. Experiment with
-                                different angles and perspectives to add a unique touch. Don&apos;t forget to use a tripod for
-                                stability and play with the exposure settings to capture the perfect lighting. Happy
-                                shooting!</p>
-                            <a href="">See more</a>
                         </div>
-                    </div>
-                    <div className={styles.card}>
-                        <div className={styles['card-img']}>
-                            <img src="https://images.unsplash.com/photo-1567597243073-2d274aabecec?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                alt="Golden Gate Bridge Picture" />
-                        </div>
-                        <div className={styles['card-details']}>
-                            <div className={styles['card-destination-header']}>
-                                <h5>PERU</h5>
-                                <h2>Machu Picchu</h2>
-                            </div>
-                            <p>Capture Machu Picchu at its finest by shooting during sunset. Position the bridge
-                                between the trees to frame it beautifully and enhance the composition. Experiment with
-                                different angles and perspectives to add a unique touch. Don&apos;t forget to use a tripod for
-                                stability and play with the exposure settings to capture the perfect lighting. Happy
-                                shooting!</p>
-                            <a href="">See more</a>
-                        </div>
-                    </div>
-                    <div className={styles.card}>
-                        <div className={styles['card-img']}>
-                            <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                alt="Golden Gate Bridge Picture" />
-                        </div>
-                        <div className={styles['card-details']}>
-                            <div className={styles['card-destination-header']}>
-                                <h5>San Francisco, USA</h5>
-                                <h2>Golden Gate Bridge</h2>
-                            </div>
-                            <p>Capture the Golden Gate Bridge at its finest by shooting during sunset. Position the bridge
-                                between the trees to frame it beautifully and enhance the composition. Experiment with
-                                different angles and perspectives to add a unique touch. Don&apos;t forget to use a tripod for
-                                stability and play with the exposure settings to capture the perfect lighting. Happy
-                                shooting!</p>
-                            <a href="">See more</a>
-                        </div>
-                    </div>
+                    ))}
                 </div>
             </div>
         </main>
