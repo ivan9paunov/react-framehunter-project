@@ -12,7 +12,7 @@ export default function FrameCatalog() {
     }, []);
 
     return (
-        <main>
+        <main style={{ justifyContent: 'flex-start' }}>
             <div className={styles.filters}>
                 <div className={styles['filter-by-date']}>
                     <label htmlFor="order">Order by:</label>
@@ -278,24 +278,28 @@ export default function FrameCatalog() {
             </div>
             <div className={styles['main-container']}>
                 <div className={styles['cards-container']}>
-
-                    {frames.map(frame => (
-                        <div key={frame._id} className={styles.card}>
-                            <div className={styles['card-img']}>
-                                <Link to={`/destinations/${frame._id}/details`}>
-                                    <img src={frame.imageUrl} alt={`${frame.destination}'s picture`} />
-                                </Link>
-                            </div>
-                            <div className={styles['card-details']}>
-                                <div className={styles['card-destination-header']}>
-                                    <h5>{frame.region ? `${frame.region}, ${frame.country}` : frame.country}</h5>
-                                    <h2>{frame.destination}</h2>
+                    {frames.length > 0
+                        ?
+                        frames.map(frame => (
+                            <div key={frame._id} className={styles.card}>
+                                <div className={styles['card-img']}>
+                                    <Link to={`/destinations/${frame._id}/details`}>
+                                        <img src={frame.imageUrl} alt={`${frame.destination}'s picture`} />
+                                    </Link>
                                 </div>
-                                <p>{frame.description}</p>
-                                <Link to={`/destinations/${frame._id}/details`}>See more</Link>
+                                <div className={styles['card-details']}>
+                                    <div className={styles['card-destination-header']}>
+                                        <h5>{frame.region ? `${frame.region}, ${frame.country}` : frame.country}</h5>
+                                        <h2>{frame.destination}</h2>
+                                    </div>
+                                    <p>{frame.description}</p>
+                                    <Link to={`/destinations/${frame._id}/details`}>See more</Link>
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        ))
+                        :
+                        <h1>NO FRAMES YET</h1>
+                    }
                 </div>
             </div>
         </main>

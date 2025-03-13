@@ -27,8 +27,8 @@
 
 .main-container {
     display: flex;
-    margin: 30px 50px;
-    padding: 20px;
+    margin: 30px 0;
+    padding: 20px 50px;
     border-radius: 10px;
 }
 
@@ -108,6 +108,12 @@
 
 .card-details a:hover {
     background: #3c7496;
+}
+
+h1 {
+    font-size: 60px;
+    text-align: center;
+    margin: 75px 0;
 }
 
 @media (max-width: 608px) {
