@@ -110,8 +110,9 @@
     background: #3c7496;
 }
 
-h1 {
+.helper-text {
     font-size: 60px;
+    font-weight: 700;
     text-align: center;
     margin: 75px 0;
 }

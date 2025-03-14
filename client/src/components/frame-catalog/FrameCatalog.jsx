@@ -1,14 +1,19 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import framesAPI from '../../api/frames-api.js';
+
 import styles from './FrameCatalog.module.css';
-import * as framesAPI from '../../api/frames-api.js';
 
 export default function FrameCatalog() {
     const [frames, setFrames] = useState([]);
 
     useEffect(() => {
-        framesAPI.getAll().then(result => setFrames(result));
+        (async () => {
+            const result = await framesAPI.getAll();
+            
+            setFrames(result);
+        })();
     }, []);
 
     return (
@@ -279,8 +284,7 @@ export default function FrameCatalog() {
             <div className={styles['main-container']}>
                 <div className={styles['cards-container']}>
                     {frames.length > 0
-                        ?
-                        frames.map(frame => (
+                        ? frames.map(frame => (
                             <div key={frame._id} className={styles.card}>
                                 <div className={styles['card-img']}>
                                     <Link to={`/destinations/${frame._id}/details`}>
@@ -297,8 +301,7 @@ export default function FrameCatalog() {
                                 </div>
                             </div>
                         ))
-                        :
-                        <h1>NO FRAMES YET</h1>
+                        : <p className={styles['helper-text']}>NO FRAMES YET</p>
                     }
                 </div>
             </div>

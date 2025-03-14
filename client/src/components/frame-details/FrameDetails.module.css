@@ -90,10 +90,10 @@
     /* IE and Edge */
 }
 
-.fa-location-dot {
-    width: 27px;
-    margin-left: 3px;
-}
+:global(.fa-solid.fa-location-dot) {
+    width: 30px;
+    text-align: center;
+  }
 
 .map img {
     width: 450px;
@@ -298,16 +298,7 @@
     background: #3c7496;
 }
 
-@media (max-width: 1400px) {
-    .map img {
-        width: 400px;
-    }
-}
-
 @media (max-width: 1300px) {
-    .map img {
-        width: 350px;
-    }
     .data-container {
         padding: 30px;
     }
@@ -326,18 +317,14 @@
     .paragraph i {
         font-size: 26px;
     }
-    .fa-location-dot {
-        width: 23px;
-        margin-left: 4px;
+    :global(.fa-solid.fa-location-dot) {
+        width: 26px;
     }
     .paragraph span {
         font-size: 16px;
     }
     .description {
         height: 198px;
-    }
-    .map img {
-        width: 300px;
     }
 }
 
@@ -349,15 +336,11 @@
     .paragraph i {
         font-size: 22px;
     }
-    .fa-location-dot {
-        width: 20px;
-        margin-left: 2px;
+    :global(.fa-solid.fa-location-dot) {
+        width: 22px;
     }
     .paragraph span {
         font-size: 15px;
-    }
-    .map img {
-        width: 275px;
     }
     .comment-section {
         width: 80%;
@@ -382,10 +365,6 @@
     }
     .description {
         height: 115px;
-    }
-    .map img {
-        width: 220px;
-        height: 220px;
     }
     .details-btns a {
         font-size: 14px;
@@ -413,6 +392,9 @@
     .main-container {
         flex-direction: column;
     }
+    .main-row {
+        flex-direction: column;
+    }
     .image-container {
         width: 100%;
     }
@@ -423,6 +405,12 @@
     .paragraph span {
         font-size: 14px;
     }
+    .description {
+        height: 100%;
+    }
+    .details-btns {
+        margin-top: 15px;
+    }
     .comment-section {
         width: 90%;
     }
@@ -432,19 +420,12 @@
     .main-container {
         margin: 30px;
     }
-    .main-row {
-        flex-direction: column;
-    }
     .likes,
     .bookmarks {
         top: 5px;
     }
     .description {
         height: auto;
-    }
-    .map img {
-        width: 100%;
-        height: 220px;
     }
 }
 
