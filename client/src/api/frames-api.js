@@ -6,9 +6,12 @@ const getAll = () => request.get(BASE_URL);
 
 const getOne = (frameId) => request.get(`${BASE_URL}/${frameId}`);
 
+const getLatest = () => request.get(`${BASE_URL}?sortBy=_createdOn%20desc&pageSize=3`);
+
 const framesAPI = {
     getAll,
-    getOne
+    getOne,
+    getLatest
 };
 
 export default framesAPI;

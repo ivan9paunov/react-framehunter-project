@@ -1,6 +1,19 @@
+import { useEffect, useState } from 'react';
+
+import framesAPI from '../../api/frames-api.js';
+
 import styles from './Home.module.css';
 
 export default function Home() {
+    const [latestFrames, setLatestFrames] = useState([]);
+
+    useEffect(() => {
+        (async () => {
+            const result = await framesAPI.getLatest();
+            setLatestFrames(result);
+        })();
+    }, []);
+
     return (
         <main>
             <section className={styles.heroSection}>
@@ -45,41 +58,28 @@ export default function Home() {
             <section className={styles['last-three-spots']}>
                 <div className={styles['section-container']}>
                     <h2>LAST ADDED DESTINATIONS</h2>
-                    <div className={styles['latest-spots']}>
-                        <div className={styles['latest-spot']}>
-                            <img src="https://images.unsplash.com/photo-1600663757626-0fc610ba60d4?q=80&w=1884&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                alt="Destination Cover" />
-                            <div className={styles['latest-spot-info']}>
-                                <h3>Golden Gate Bridge</h3>
-                                <div className={styles['latest-spot-footer']}>
-                                    <p>San Francisco, USA</p>
-                                    <a href={`/details/${'spotId'}`}>Details</a>
+
+                    {latestFrames.length > 0
+                        ?
+                        <div className={styles['latest-spots']}>
+
+                            {latestFrames.map(frame =>
+                                <div key={frame._id} className={styles['latest-spot']}>
+                                    <img src={frame.imageUrl} alt={`${frame.destination}'s Picture`} />
+                                    <div className={styles['latest-spot-info']}>
+                                        <h3>{frame.destination}</h3>
+                                        <div className={styles['latest-spot-footer']}>
+                                            <p>{frame.region ? `${frame.region}, ${frame.country}` : frame.country}</p>
+                                            <a href={`/destinations/${frame._id}/details`}>Details</a>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                            )}
+
                         </div>
-                        <div className={styles['latest-spot']}>
-                            <img src="https://images.unsplash.com/photo-1522092372459-dff01028d904?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                alt="Destination Cover" />
-                            <div className={styles['latest-spot-info']}>
-                                <h3>Brooklyn Bridge</h3>
-                                <div className={styles['latest-spot-footer']}>
-                                    <p>New York, USA</p>
-                                    <a href={`/details/${'spotId'}`}>Details</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div className={styles['latest-spot']}>
-                            <img src="https://images.unsplash.com/photo-1567597243073-2d274aabecec?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                alt="Destination Cover" />
-                            <div className={styles['latest-spot-info']}>
-                                <h3>Machu Picchu</h3>
-                                <div className={styles['latest-spot-footer']}>
-                                    <p>PERU</p>
-                                    <a href={`/details/${'spotId'}`}>Details</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        : <p className={styles['helper-text']}>NO DESTINATIONS ADDED YET</p>
+                    }
+
                 </div >
             </section >
         </main >

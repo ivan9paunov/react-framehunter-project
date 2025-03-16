@@ -165,6 +165,14 @@ section.last-three-spots .section-container h2 {
     justify-content: space-around;
 }
 
+.helper-text {
+    color: #8a5044;
+    font-size: 60px;
+    font-weight: 700;
+    text-align: center;
+    margin: 20px 0;
+}
+
 @media (max-width: 1250px) {
     .welcome-text {
         width: 80%;
